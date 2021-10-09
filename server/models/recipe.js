@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.recipe.belongsTo(models.user, {foreignKey: "user_id"})
-      models.recipe.hasMany(models.comment, {foreignKey: "recipe"})
-      models.recipe.hasMany(models.like, {foreignKey: "recipe"})
+      models.recipe.hasMany(models.comment, {foreignKey: "recipe_id"})
+      models.recipe.hasMany(models.like, {foreignKey: "recipe_id"})
     }
   };
   recipe.init({
